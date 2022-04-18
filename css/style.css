@@ -62,6 +62,11 @@ header #navbar .menu {
 header #navbar .menu .item {
   font-size: 1.2rem;
   font-weight: 400;
+  transition: all 300ms ease;
+}
+
+header #navbar .menu .item:hover {
+  color: var(--color-primary);
 }
 
 header .hero-banner {
@@ -88,4 +93,8 @@ header .hero-banner .subtitle {
   font-size: 2.5rem;
   font-weight: 100;
   margin-top: -1rem;
+}
+
+header .hero-banner .subtitle.bis {
+  margin: 0;
 }

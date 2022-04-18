@@ -8,3 +8,12 @@ let dateLocale = date1.toLocaleString('fr-FR',{
 });
 
 document.getElementById('date').innerHTML = 'on est le ' + dateLocale;
+
+let hour = new Date();
+
+let hourLocale = hour.toLocaleString('fr-FR',{
+  hour: 'numeric',
+  minute: 'numeric'
+});
+
+document.getElementById('hours').innerHTML = 'il est ' + hourLocale;
