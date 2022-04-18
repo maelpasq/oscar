@@ -1,3 +1,11 @@
+window.onscroll = function () {
+  if(document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").className = "scroll-active";
+  } else {
+    document.getElementById("navbar").className = "";
+  }
+}
+
 let date1 = new Date();
 
 let dateLocale = date1.toLocaleString('fr-FR',{

@@ -6,7 +6,8 @@
   --color-secondary: #003844;
   --color-light: #F7F7F7;
   --color-dark: #000411;
-  --color-muted: #AEB7B3;
+  --color-muted: #aeb7b3;
+  --color-muted-bis: rgba(174, 183, 179, 0.5);
 
   --font-primary: 'Ubuntu', sans-serif;
   --font-secondary: 'Square Peg', serif;
@@ -24,11 +25,18 @@ body, html {
   width: 100%;
   height: 100vh;
   scroll-behavior: smooth;
+  background: var(--color-secondary);
 }
 
 a {
   text-decoration: none;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
 
 header {
   width: 100%;
@@ -36,11 +44,10 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--color-secondary);
 }
 
 header #navbar {
-  position: absolute;
+  position: fixed;
   width: 94%;
   height: 6rem;
   display: flex;
@@ -55,7 +62,6 @@ header #navbar .logo {
 header #navbar .menu {
   display: flex;
   flex-direction: row;
-  gap: 3rem;
   list-style: none;
 }
 
@@ -67,6 +73,18 @@ header #navbar .menu .item {
 
 header #navbar .menu .item:hover {
   color: var(--color-primary);
+}
+
+header #navbar .menu .item.back {
+  display: none;
+}
+
+header #navbar.scroll-active .menu .item.discover {
+  display: none;
+}
+
+header #navbar.scroll-active .menu .item.back {
+  display: block;
 }
 
 header .hero-banner {
@@ -97,4 +115,48 @@ header .hero-banner .subtitle {
 
 header .hero-banner .subtitle.bis {
   margin: 0;
+}
+
+
+
+main {
+  width: 100%;
+  height: 100vh;
+  padding: 6rem 3%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 2rem;
+}
+
+main .card {
+  background: var(--color-light);
+  width: 15rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  transition: all 300ms ease;
+}
+
+main .card:hover {
+  box-shadow: 0 0 5rem -2rem var(--color-primary);
+}
+
+main .card.muted {
+  background: transparent;
+  border: 5px dashed var(--color-muted-bis);
+}
+
+main .card:hover.muted {
+  box-shadow: none;
+}
+
+main .card .title {
+  font-size: 1.6rem;
+  color: var(--color-dark);
 }
