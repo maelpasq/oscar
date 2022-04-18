@@ -47,6 +47,7 @@ header {
 }
 
 header #navbar {
+  z-index: 1;
   position: fixed;
   width: 94%;
   height: 6rem;
@@ -87,34 +88,40 @@ header #navbar.scroll-active .menu .item.back {
   display: block;
 }
 
-header .hero-banner {
+header #hero-banner {
+  position: fixed;
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: all 300ms ease;
 }
 
-header .hero-banner .title {
+header #hero-banner .title {
   font-size: 7rem;
   font-weight: 400;
 }
 
-header .hero-banner .title span {
+header #hero-banner .title span {
   font-family: var(--font-secondary);
   font-size: 12rem;
   color: var(--color-primary);
 }
 
-header .hero-banner .subtitle {
+header #hero-banner .subtitle {
   font-size: 2.5rem;
   font-weight: 100;
   margin-top: -1rem;
 }
 
-header .hero-banner .subtitle.bis {
+header #hero-banner .subtitle.bis {
   margin: 0;
+}
+
+header #hero-banner.scroll-active {
+  opacity: 0;
 }
 
 

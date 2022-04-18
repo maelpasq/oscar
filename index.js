@@ -1,8 +1,10 @@
 window.onscroll = function () {
-  if(document.documentElement.scrollTop > 80) {
+  if(document.documentElement.scrollTop > 100) {
     document.getElementById("navbar").className = "scroll-active";
+    document.getElementById("hero-banner").className = "scroll-active";
   } else {
     document.getElementById("navbar").className = "";
+    document.getElementById("hero-banner").className = "";
   }
 }
 
